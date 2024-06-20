@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Leis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="carregarDados()">
+    <header class="header">
+        <div class="logo">
+            <img src="home.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Cadastro de Leis de Iniciativa Popular</h1>
+        <!-- Dropdown para a abrangência da lei -->
+        <label for="id_abrangencia">Abrangência da Lei:</label>
+        <select id="id_abrangencia" required>
+            <option value="municipal">Municipal</option>
+            <option value="estadual">Estadual</option>
+            <option value="federal">Federal</option>
+        </select>
+
+        <!-- Dropdown para o ramo do direito da proposta de lei -->
+        <label for="id_ramodireito">Ramo do Direito da Proposta de Lei:</label>
+        <select id="id_ramodireito" required>
+            <option value="processual" selected>Processual</option>
+            <option value="administrativo">Administrativo</option>
+            <option value="constitucional">Constitucional</option>
+            <option value="consumidor">Consumidor</option>
+            <option value="ambiental">Ambiental</option>
+            <option value="tributaria">Tributária</option>
+            <option value="civil">Cível</option>
+            <option value="penal">Penal</option>
+        </select>
+
+        <form id="formulario_lei">
+            <label for="nome_proposta">Nome da Proposta de Lei:</label>
+            <textarea id="nome_proposta" rows="4" cols="30" required></textarea>
+            <label for="exposicao_motivos">Exposição de Motivos do Projeto de Lei:</label>
+            <textarea id="exposicao_motivos" rows="4" cols="30" required></textarea>
+            <label for="texto_lei">Texto da Lei:</label>
+            <textarea id="texto_lei" rows="4" cols="30" required></textarea>
+            <div class="button-container">
+                <button id="submitBtn" type="button" onclick="enviar_lei()" >Enviar</button>
+                <button id="updatebutton" type="button" onclick="atualizar()" >Atualizar</button>
+               
+                <button onclick="atualizarPagina()">Atualizar Página</button>
+                <input type="hidden" id="lei_id_selecionada">
+                <input type="hidden" id="id">
+            </div>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ID Abrangência</th>
+                    <th>ID Ramo do Direito</th>
+                    <th>Nome da Proposta</th>
+                    <th>Exposição dos Motivos</th>
+                    <th>Texto da Lei</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+        <!-- <ul id="lista_leis"></ul> -->
+    </div>
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+  <script>
+    function atualizarPagina() {
+      // A função location.reload() recarrega a página
+      location.reload();
+    }
+  </script>
