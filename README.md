@@ -28,7 +28,7 @@ The Law Proposition Website Platform is a full-stack web application built to fa
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/your-repo-name.git](https://github.com/viniciusgdoliveira/n3final/
+    git clone https://github.com/viniciusgdoliveira/n3final/
     cd nodeJS-bootstrap-sql
     ```
 
